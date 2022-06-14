@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: clearlinux:base
+
+%post
+    swupd update --quiet
+    swupd bundle-add --quiet c-basic
+    swupd clean --all
+
+%test
+    gcc --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    Clear Linux with latest version of GCC.

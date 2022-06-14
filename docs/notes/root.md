@@ -2,12 +2,15 @@
 id: 65pcl3y1a41m4998n7mautj
 title: Root
 desc: ''
-updated: 1655228308525
+updated: 1655228561800
 created: 1655228308525
 ---
-# Welcome to Dendron
 
-This is the root of your dendron vault. If you decide to publish your entire vault, this will be your landing page. You are free to customize any part of this page except the frontmatter on top.
+# Dashboard GWM
+
+This is the root of your dendron vault. If you decide to publish your entire
+vault, this will be your landing page. You are free to customize any part of
+this page except the frontmatter on top.
 
 ## Lookup
 

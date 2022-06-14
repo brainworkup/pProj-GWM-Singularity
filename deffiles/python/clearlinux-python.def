@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: clearlinux/python:latest
+
+%post
+
+
+%test
+    python --version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Clear Linux with latest version of Python.

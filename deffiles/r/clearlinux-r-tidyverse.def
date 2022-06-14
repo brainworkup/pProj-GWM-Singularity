@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: clearlinux/r-base:latest
+
+%post
+    Rscript -e 'install.packages("tidyverse", repos = "http://cran.us.r-project.org")'
+
+%test
+    R --version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    R
+
+%help
+    Clear Linux with latest version of R linked to OpenBLAS and tidyverse family of packages installed.

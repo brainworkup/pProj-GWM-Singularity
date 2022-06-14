@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: sysstacks/mers-ubuntu:latest
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    ffmpeg -version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Latest version of the Intel Media Reference Stack with Ubuntu 20.04 and OpenVINO toolkit, Intel Media SDK, FFmpeg, GStreamer, and various audio/video codecs.

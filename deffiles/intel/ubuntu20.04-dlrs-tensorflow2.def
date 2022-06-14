@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: sysstacks/dlrs-tensorflow2-ubuntu:latest
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    python -c 'import tensorflow as tf; print("TensorFlow version: " + tf.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Latest version of the Intel Deep Learning Reference Stack with Ubuntu 20.04 and TensorFlow 2.

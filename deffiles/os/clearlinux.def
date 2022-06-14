@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: clearlinux:base
+
+%post
+    swupd update
+    swupd clean --all
+
+%test
+    cat /etc/os-release
+
+%environment
+    export LC_ALL=C
+
+%help
+    Minimal container with latest Clear Linux OS.

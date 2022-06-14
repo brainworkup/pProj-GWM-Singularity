@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: sysstacks/dlrs-tensorflow2-centos:latest
+
+%post
+    dnf -y autoremove
+    dnf -y clean all
+
+%test
+    python -c 'import tensorflow as tf; print("TensorFlow version: " + tf.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python 
+
+%help
+    Latest version of the Intel Deep Learning Reference Stack with CentOS 8 and TensorFlow 2.
+    

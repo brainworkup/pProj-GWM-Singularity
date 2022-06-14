@@ -1,0 +1,19 @@
+Bootstrap: library
+From: ubuntu:20.04
+
+%post
+    apt-get -y update
+    apt-get -y upgrade
+    apt-get -y install build-essential
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    gcc --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    Ubuntu 20.04 with GCC 9.3.0.
+    

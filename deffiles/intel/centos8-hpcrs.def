@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: sysstacks/hpcrs-centos:latest
+
+%post
+    dnf -y autoremove
+    dnf -y clean all
+
+%test
+    python -c 'import torch; print("PyTorch version: " + torch.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Latest version of the Intel HPC Reference Stack with CentOS 8 and Intel oneAPI, PyTorch, Horovod, Spack, and other packages. Set up your environment for oneAPI with the following command: source /opt/intel/oneapi/setvars.sh

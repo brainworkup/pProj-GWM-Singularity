@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: sysstacks/dlrs-pytorch-ubuntu:latest
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    python -c 'import torch; print("PyTorch version: " + torch.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Latest version of the Intel Deep Learning Reference Stack with Ubuntu 20.04 and PyTorch.

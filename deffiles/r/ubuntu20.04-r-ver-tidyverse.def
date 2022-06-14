@@ -1,0 +1,20 @@
+Bootstrap: docker
+From: rocker/r-ver:latest
+
+%post
+    Rscript -e 'install.packages("tidyverse")'
+
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    R --version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    R
+
+%help
+    Ubuntu 20.04 with latest version of R linked to OpenBLAS and tidyverse family of packages installed.

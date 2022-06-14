@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: clearlinux/tensorflow:latest
+
+%post
+
+
+%test
+    python -c 'import tensorflow as tf; print("TensorFlow version: " + tf.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Clear Linux with latest version of TensorFlow.

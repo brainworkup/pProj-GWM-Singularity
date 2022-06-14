@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: sysstacks/dlrs-pytorch-centos:latest
+
+%post
+    dnf -y autoremove
+    dnf -y clean all
+
+%test
+    python -c 'import torch; print("PyTorch version: " + torch.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Latest version of the Intel Deep Learning Reference Stack with CentOS 8 and PyTorch.

@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/nvhpc:21.9-devel-cuda_multi-ubuntu20.04
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    nvcc --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    Ubuntu 20.04 with NVIDIA HPC SDK 21.9.

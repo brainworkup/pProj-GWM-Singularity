@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: intel/intel-optimized-pytorch:latest
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    python -c 'import torch; print("PyTorch version: " + torch.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Ubuntu 20.04 with PyTorch optimized for Intel architectures.

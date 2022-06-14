@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/nvhpc:21.9-devel-cuda_multi-centos7
+
+%post
+    yum -y autoremove
+    yum -y clean all
+
+%test
+    nvcc --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    CentOS 7 with NVIDIA HPC SDK 21.9.

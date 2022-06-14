@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: clearlinux/python:latest
+
+%post
+    swupd bundle-add --quiet python-extras
+    swupd clean --all
+
+%test
+    python -c 'import scipy; print("SciPy version: " + scipy.__version__)'
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Clear Linux with latest version of Python along with OpenBLAS and scipy, numpy, pandas, matplotlib, scikit-learn, dask, and other packages installed.

@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: python:latest
+
+%post
+
+
+%test
+    python --version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    python
+
+%help
+    Debian 10 with latest version of Python.

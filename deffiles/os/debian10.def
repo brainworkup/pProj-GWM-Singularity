@@ -1,0 +1,17 @@
+Bootstrap: library
+From: debian:10
+
+%post
+    apt-get -y update
+    apt-get -y upgrade
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    cat /etc/os-release
+
+%environment
+    export LC_ALL=C
+
+%help
+    Minimal container with Debian 10.

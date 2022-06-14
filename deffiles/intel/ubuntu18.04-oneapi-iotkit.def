@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: intel/oneapi-iotkit:devel-ubuntu18.04
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    /opt/intel/oneapi/compiler/latest/linux/bin/dpcpp --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    Ubuntu 18.04 with the latest version of the Intel oneAPI IoT Toolkit. Set up your environment for oneAPI with the following command: source /opt/intel/oneapi/setvars.sh

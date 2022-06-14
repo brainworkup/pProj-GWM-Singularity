@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: rocker/geospatial:latest
+
+%post
+    apt-get -y autoremove --purge
+    apt-get -y clean
+
+%test
+    R --version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    R
+
+%help
+    Ubuntu 20.04 with latest version of R linked to OpenBLAS and various geospatial-related R packages installed.

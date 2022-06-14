@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: intel/oneapi-iotkit:devel-centos8
+
+%post
+    dnf -y autoremove
+    dnf -y clean all
+
+%test
+    /opt/intel/oneapi/compiler/latest/linux/bin/dpcpp --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    CentOS 8 with the latest version of the Intel oneAPI IoT Toolkit. Set up your environment for oneAPI with the following command: source /opt/intel/oneapi/setvars.sh

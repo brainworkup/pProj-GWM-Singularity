@@ -1,0 +1,18 @@
+Bootstrap: library
+From: centos:7
+
+%post
+    yum -y upgrade
+    yum -y groups mark install "Development Tools"
+    yum -y groupinstall "Development Tools"
+    yum -y autoremove
+    yum -y clean all
+
+%test
+    gcc --version
+
+%environment
+    export LC_ALL=C
+
+%help
+    CentOS 7 with GCC 4.8.5.

@@ -1,0 +1,24 @@
+Bootstrap: docker
+From: rocker/r-ver:latest
+
+%post
+    Rscript -e 'install.packages("tidyverse")'
+    Rscript -e 'install.packages("easystats", repos = "https://easystats.r-universe.dev")'
+    Rscript -e 'install.packages("fastverse", repos = "https://fastverse.r-universe.dev")'
+    Rscript -e 'tinytex::tlmgr_install(c("apa6", "threeparttable", "fancyhdr", "endfloat", "csquotes", "was", "multirow", "threeparttablex", "environ", "trimspaces", "tocloft", "crop", "psnfss", "courier"))'
+
+    apt-get -y autoremove --purge
+    apt-get -y clean
+    apt-get update -y && apt-get install -y quarto
+
+%test
+    R --version
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    R
+
+%help
+    Ubuntu 20.04 with latest version of R linked to OpenBLAS and tidyverse/fastverse family of packages installed.

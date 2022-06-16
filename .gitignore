@@ -38,3 +38,12 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 docs/dendron.code-workspace
+results_assoc/C050phe-digit-span-bkwdlinear.tex
+results_assoc/cleaned-linear-pl-man-phe-digit-span-bkwd.png
+results_assoc/cleaned-linear-pl-qq-phe-digit-span-bkwd.png
+results_assoc/cleaned-pca.pdf
+results_assoc/cleaned.eigenval
+results_assoc/cleaned.eigenvec
+results_assoc/linear/phe_digit_span_bkwd.assoc.linear
+results_assoc/linear/phe_digit_span_bkwd.assoc.linear.adjusted
+results_assoc/linear/phe_digit_span_bkwd.log

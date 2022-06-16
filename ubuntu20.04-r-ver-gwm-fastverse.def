@@ -5,11 +5,11 @@ From: rocker/r-ver:latest
     Rscript -e 'install.packages("tidyverse")'
     Rscript -e 'install.packages("easystats", repos = "https://easystats.r-universe.dev")'
     Rscript -e 'install.packages("fastverse", repos = "https://fastverse.r-universe.dev")'
-    Rscript -e 'tinytex::tlmgr_install(c("apa6", "threeparttable", "fancyhdr", "endfloat", "csquotes", "was", "multirow", "threeparttablex", "environ", "trimspaces", "tocloft", "crop", "psnfss", "courier"))'
+    Rscript -e 'install.packages("tinytex", repos = "https://yihui.r-universe.dev")'
 
     apt-get -y autoremove --purge
     apt-get -y clean
-    apt-get update -y && apt-get install -y quarto
+    apt-get update -y && apt-get install -y fish
 
 %test
     R --version

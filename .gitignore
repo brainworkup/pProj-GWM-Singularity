@@ -47,3 +47,5 @@ results_assoc/cleaned.eigenvec
 results_assoc/linear/phe_digit_span_bkwd.assoc.linear
 results_assoc/linear/phe_digit_span_bkwd.assoc.linear.adjusted
 results_assoc/linear/phe_digit_span_bkwd.log
+gwm.code-workspace
+output/
